@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct ItemModels: Identifiable {
+struct ItemModels: Identifiable, Codable {
     var id: String
     let title: String
     let isCompleted: Bool

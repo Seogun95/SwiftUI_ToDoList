@@ -12,7 +12,7 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
-        VStack {
+        ZStack {
             List {
                 ForEach(listViewModel.items) { item in
                     ListRowView(items: item)
@@ -21,12 +21,12 @@ struct ListView: View {
                                 listViewModel.updateItems(item: item)
                             }
                         }
-                    
                 }
                 .onDelete(perform: listViewModel.deleteItem)
                 .onMove(perform: listViewModel.moveItem)
             }
         }
+        .listStyle(PlainListStyle())
         .navigationBarTitle("할일 목록")
         .navigationBarItems(leading: EditButton(),
                             trailing: NavigationLink(
@@ -34,7 +34,7 @@ struct ListView: View {
                                 label: {
                                     Text("목록 추가")
                                 }))
-        .listStyle(PlainListStyle())
+       
     }
    
 }
