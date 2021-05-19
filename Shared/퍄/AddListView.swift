@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct AddListView: View {
-    @EnvironmentObject var listViewModel: ListViewModel
-    
-    @State var TextFieldTitle: String = ""
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var listViewModel: ListViewModel
+
+    @State var TextFieldTitle: String = ""
+    @State var showAlert: Bool = false
+    @State var AlertTitle: String = ""
+ 
     
     var body: some View {
         ScrollView {
@@ -25,7 +28,7 @@ struct AddListView: View {
                     .disableAutocorrection(true)
                 
                 Button(action: {
-                    
+                    saveButtonPressed()
                 }, label: {
                     Text("저장")
                         .padding()
@@ -39,16 +42,27 @@ struct AddListView: View {
             .padding()
         }
         .navigationBarTitle("할일 목록 추가")
+        .alert(isPresented: $showAlert, content: getAlert)
     }
     func saveButtonPressed() {
+        if textAppropriate() {
         listViewModel.addItems(title: TextFieldTitle)
+        presentationMode.wrappedValue.dismiss()
+            
+        }
     }
     
     func textAppropriate() -> Bool {
-        guard TextFieldTitle.count < 2 else {
+        if TextFieldTitle.count < 2 {
+            AlertTitle = "두 글자 이상 입력해주세요."
+            showAlert.toggle()
             return false
         }
         return true
+    }
+    
+    func getAlert() -> Alert {
+        return Alert(title: Text(AlertTitle), message: nil, dismissButton: .default(Text("확인")))
     }
 }
 
