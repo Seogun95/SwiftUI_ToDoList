@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C8DF6CA26557240003230E5 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8DF6C926557240003230E5 /* ListRowView.swift */; };
+		6C8DF6CB26557240003230E5 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8DF6C926557240003230E5 /* ListRowView.swift */; };
 		6CFE5B7D2655683C0072EB86 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5B7C2655683C0072EB86 /* Tests_iOS.swift */; };
 		6CFE5B882655683C0072EB86 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5B872655683C0072EB86 /* Tests_macOS.swift */; };
 		6CFE5B8A2655683C0072EB86 /* SwiftUI_ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5B612655683B0072EB86 /* SwiftUI_ToDoListApp.swift */; };
 		6CFE5B8B2655683C0072EB86 /* SwiftUI_ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5B612655683B0072EB86 /* SwiftUI_ToDoListApp.swift */; };
-		6CFE5B8C2655683C0072EB86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5B622655683B0072EB86 /* ContentView.swift */; };
-		6CFE5B8D2655683C0072EB86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5B622655683B0072EB86 /* ContentView.swift */; };
+		6CFE5B8C2655683C0072EB86 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5B622655683B0072EB86 /* ListView.swift */; };
+		6CFE5B8D2655683C0072EB86 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5B622655683B0072EB86 /* ListView.swift */; };
 		6CFE5B8E2655683C0072EB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CFE5B632655683C0072EB86 /* Assets.xcassets */; };
 		6CFE5B8F2655683C0072EB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CFE5B632655683C0072EB86 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -35,8 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C8DF6C926557240003230E5 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		6CFE5B612655683B0072EB86 /* SwiftUI_ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ToDoListApp.swift; sourceTree = "<group>"; };
-		6CFE5B622655683B0072EB86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6CFE5B622655683B0072EB86 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		6CFE5B632655683C0072EB86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CFE5B682655683C0072EB86 /* SwiftUI_ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFE5B6B2655683C0072EB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				6CFE5B612655683B0072EB86 /* SwiftUI_ToDoListApp.swift */,
-				6CFE5B622655683B0072EB86 /* ContentView.swift */,
+				6CFE5B622655683B0072EB86 /* ListView.swift */,
+				6C8DF6C926557240003230E5 /* ListRowView.swift */,
 				6CFE5B632655683C0072EB86 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -308,7 +312,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CFE5B8C2655683C0072EB86 /* ContentView.swift in Sources */,
+				6CFE5B8C2655683C0072EB86 /* ListView.swift in Sources */,
+				6C8DF6CA26557240003230E5 /* ListRowView.swift in Sources */,
 				6CFE5B8A2655683C0072EB86 /* SwiftUI_ToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,7 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CFE5B8D2655683C0072EB86 /* ContentView.swift in Sources */,
+				6CFE5B8D2655683C0072EB86 /* ListView.swift in Sources */,
+				6C8DF6CB26557240003230E5 /* ListRowView.swift in Sources */,
 				6CFE5B8B2655683C0072EB86 /* SwiftUI_ToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
