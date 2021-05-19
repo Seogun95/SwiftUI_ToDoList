@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ListRowView: View {
-    var listTitle: String
+    
+    var items: ItemModels
+    
     var body: some View {
         HStack {
-            Image(systemName: "checkmark.circle")
-            Text(listTitle)
+            Image(systemName: items.isCompleted ? "checkmark.circle" : "circle")
+                .foregroundColor(items.isCompleted ? Color.green : Color.red)
+            Text(items.title)
             Spacer()
         }
     }
@@ -20,6 +23,10 @@ struct ListRowView: View {
 
 struct ListRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ListRowView(listTitle: "안녕하세요")
+        Group {
+        ListRowView(items: ItemModels(title: "안녕하세요", isCompleted: false))
+        ListRowView(items: ItemModels(title: "안녕하세요", isCompleted: true))
+        }
+        .previewLayout(.sizeThatFits)
     }
 }

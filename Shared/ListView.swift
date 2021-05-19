@@ -9,21 +9,28 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var items: [String] = [
-        "안녕하세요"
+    @State var items: [ItemModels] = [
+        ItemModels(title: "치과 예약하기", isCompleted: false),
+        ItemModels(title: "우유 사기", isCompleted: true),
+        ItemModels(title: "코 치료 세번", isCompleted: false)
     ]
     var body: some View {
         VStack {
             List {
-                ForEach(items, id: \.self) { item in
-                    ListRowView(listTitle: item)
+                ForEach(items) { item in
+                    ListRowView(items: item)
                 }
                 .onDelete(perform: deleteItem)
                 .onMove(perform: moveItem)
             }
         }
         .navigationBarTitle("할일 목록")
-        .navigationBarItems(leading: EditButton())
+        .navigationBarItems(leading: EditButton(),
+                            trailing: NavigationLink(
+                                destination: AddListView(),
+                                label: {
+                                    Text("목록 추가")
+                                }))
         .listStyle(PlainListStyle())
     }
     func deleteItem(indexSet: IndexSet) {
