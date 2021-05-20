@@ -23,7 +23,7 @@ struct NoItemView: View {
                 NavigationLink(
                     destination: AddListView(),
                     label: {
-                        Text("저장")
+                        Text("목록 추가")
                             .fontWeight(.black)
                             .padding()
                             .foregroundColor(.white)

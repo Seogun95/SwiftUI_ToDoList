@@ -18,6 +18,8 @@ struct SwiftUI_ToDoListApp: App {
                 ListView()
             }
             .environmentObject(listViewModel)
+            .navigationViewStyle(StackNavigationViewStyle())
+            
         }
     }
 }
