@@ -13,17 +13,21 @@ struct ListView: View {
     
     var body: some View {
         ZStack {
-            List {
-                ForEach(listViewModel.items) { item in
-                    ListRowView(items: item)
-                        .onTapGesture {
-                            withAnimation(.spring()) {
-                                listViewModel.updateItems(item: item)
+            if listViewModel.items.isEmpty {
+                NoItemView()
+            } else {
+                List {
+                    ForEach(listViewModel.items) { item in
+                        ListRowView(items: item)
+                            .onTapGesture {
+                                withAnimation(.spring()) {
+                                    listViewModel.updateItems(item: item)
+                                }
                             }
-                        }
+                    }
+                    .onDelete(perform: listViewModel.deleteItem)
+                    .onMove(perform: listViewModel.moveItem)
                 }
-                .onDelete(perform: listViewModel.deleteItem)
-                .onMove(perform: listViewModel.moveItem)
             }
         }
         .listStyle(PlainListStyle())
@@ -34,9 +38,9 @@ struct ListView: View {
                                 label: {
                                     Text("목록 추가")
                                 }))
-       
+        
     }
-   
+    
 }
 
 struct ListView_Previews: PreviewProvider {
