@@ -35,7 +35,7 @@ struct NoItemView: View {
                     .padding()
                     .padding(.horizontal, animate ? 30 : 40)
                     .offset(y: animate ? 0 : 10)
-                    .shadow(color: animate ? Color("peach") : Color("PalePurple"),
+                    .shadow(color: animate ? Color("peach") : Color("PalePurple").opacity(0.6),
                             radius: animate ? 20 : 30,
                             x: 0.0,
                             y: animate ? 30 : 30)
@@ -69,11 +69,14 @@ struct NoItemView_Previews: PreviewProvider {
                 NoItemView()
                     .navigationBarTitle("할일 목록")
             }
+            .preferredColorScheme(.dark)
+            
             NavigationView {
                 NoItemView()
                     .navigationBarTitle("할일 목록")
             }
+            .preferredColorScheme(.light)
         }
-    
+        
     }
 }
